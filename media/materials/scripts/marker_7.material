@@ -1,0 +1,14 @@
+material Marker7
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture aruco_mark_7.png
+				scale 1 1
+			}
+		}
+	}
+}

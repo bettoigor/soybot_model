@@ -1,0 +1,645 @@
+<?xml version="1.0"?>
+<robot name="sb2">
+
+#### LINKS #####################################################
+
+<link name="base_link">
+	<visual>
+		<origin rpy="0 0 0" xyz="0 0 0"/>
+		<geometry>
+			<mesh filename = 
+			"package://sb2_urdf/models/gantry_soy.dae" />
+		</geometry>
+	</visual>
+	<collision>
+		<origin rpy="0 0 0" xyz="0 0 0"/>
+		<geometry>
+			<mesh filename = 
+			"package://sb2_urdf/models/collision_gantry_soy.dae" />
+		</geometry>
+	</collision>
+	<inertial>
+		<origin rpy="0 0 0" xyz="-0.33 0 0.9"/>
+		<mass value="57.53"/>
+		<inertia 
+		ixx = "06.67" ixy = "-00.10" ixz = "0.03" 
+		iyy = "04.86" iyz = "0.00" 
+		izz = "11.26"/>
+	</inertial>
+</link>
+
+<link name="drivetrain_L">
+	<visual>
+		<origin rpy="0 0 0" xyz="0 0 0"/>
+		<geometry>
+			<mesh filename = 
+			"package://sb2_urdf/models/drivetrain_L.dae" />
+		</geometry>
+	</visual>
+	<collision>
+		<origin rpy="0 0 0" xyz="0 0 0"/>
+		<geometry>
+			<mesh filename = 
+			"package://sb2_urdf/models/collision_drivetrain.dae" />
+		</geometry>
+	</collision>
+	<inertial>
+		<origin rpy="0 0 0" xyz="-0.21 -0.00 0.66"/>
+		<mass value="57.53"/>
+		<inertia 
+		ixx = "01.71" ixy = "0.04" ixz = "-0.93" 
+		iyy = "07.20" iyz = "-0.00" 
+		izz = "06.01"/>
+	</inertial>
+</link>  
+
+<link name="drivetrain_R">
+	<visual>
+		<origin rpy="0 0 0" xyz="0 0 0"/>
+		<geometry>
+			<mesh filename = 
+			"package://sb2_urdf/models/drivetrain_R.dae" />
+		</geometry>
+	</visual>
+	<collision>
+		<origin rpy="0 0 0" xyz="0 0 0"/>
+		<geometry>
+			<mesh filename = 
+			"package://sb2_urdf/models/collision_drivetrain.dae" />
+		</geometry>
+	</collision>
+	<inertial>
+		<origin rpy="0 0 0" xyz="-0.21 0 0.66"/>
+		<mass value="55.71"/>
+		<inertia 
+		ixx = "01.71" ixy = "0.04" ixz = "-0.93" 
+		iyy = "0.20" iyz = "-0.00" 
+		izz = "06.01"/>
+	</inertial>
+</link>  
+
+<link name="wheel_12_L">
+	<visual>
+		<origin rpy="0 0 0" xyz="0 0 0"/>
+		<geometry>
+			<mesh filename = 
+			"package://sb2_urdf/models/wheel_12.dae" />
+		</geometry>
+	</visual>
+	<collision>
+		<origin rpy="0 0 0" xyz="0 0 0"/>
+		<geometry>
+			<mesh filename =
+			"package://sb2_urdf/models/collision_wheel_12.dae"/>
+		</geometry>
+	</collision>
+	<inertial>
+		<origin rpy="0 0 0" xyz="0.00 0.01 0.00"/>
+		<mass value=" 18.54"/>
+		<inertia
+		ixx = "0.28" ixy = "-0.00" ixz = "0.00"
+		iyy = "0.49" iyz = "-0.00" 
+		izz = "0.28"/>
+	</inertial>
+</link>
+
+<link name="wheel_12_R">
+	<visual>
+		<origin rpy="0 0 0" xyz="0 0 0"/>
+		<geometry>
+			<mesh filename = 
+			"package://sb2_urdf/models/wheel_12.dae" />
+		</geometry>
+	</visual>
+	<collision>
+		<origin rpy="0 0 0" xyz="0 0 0"/>
+		<geometry>
+			<mesh filename =
+			"package://sb2_urdf/models/collision_wheel_12.dae"/>
+		</geometry>
+	</collision>
+	<inertial>
+		<origin rpy="0 0 0" xyz="0.00 0.01 0.00"/>
+		<mass value=" 18.54"/>
+		<inertia 
+		ixx = "0.28" ixy = "-0.00" ixz = "0.00" 
+		iyy = "0.49" iyz = "-0.00" 
+		izz = "0.28"/>
+	</inertial>
+</link>
+
+<link name="castor_L">
+	<visual>
+		<origin rpy="0 0 0" xyz="0 0 0"/>
+		<geometry>
+			<mesh filename = 
+			"package://sb2_urdf/models/castor_L.dae" />
+		</geometry>
+	</visual>
+	<collision>
+		<origin rpy="0 0 0" xyz="0 0 0"/>
+		<geometry>
+			<mesh filename = 
+			"package://sb2_urdf/models/collision_castor.dae" />
+		</geometry>
+	</collision>
+	<inertial>
+		<origin rpy="0 0 0" xyz="-0.06 -0.05 0.42"/>
+		<mass value="06.29"/>
+		<inertia 
+		ixx = "0.18" ixy = "0.01" ixz = "0.06" 
+		iyy = "0.19" iyz = "0.02" 
+		izz = "0.05"/>
+	</inertial>
+</link>
+
+<link name="castor_R">
+	<visual>
+		<origin rpy="0 0 0" xyz="0 0 0"/>
+		<geometry>
+			<mesh filename = 
+			"package://sb2_urdf/models/castor_R.dae" />
+		</geometry>
+	</visual>
+	<collision>
+		<origin rpy="0 0 0" xyz="0 0 0"/>
+		<geometry>
+			<mesh filename = 
+			"package://sb2_urdf/models/collision_castor.dae" />
+		</geometry>
+	</collision>
+	<inertial>
+		<origin rpy="0 0 0" xyz=" -0.06 -0.05 0.42"/>
+		<mass value="06.29"/>
+		<inertia 
+		ixx = "0.18" ixy = "0.01" ixz = "0.06" 
+		iyy = "0.19" iyz = "0.02" 
+		izz = "0.05"/>
+	</inertial>
+</link>
+
+<link name="wheel_8_L">
+	<visual>
+		<origin rpy="0 0 0" xyz="0 -0.026 0"/>
+		<geometry>
+			<mesh filename = 
+			"package://sb2_urdf/models/wheel_8.dae" />
+		</geometry>
+	</visual>
+	<collision>
+		<origin rpy="0 0 0" xyz="0 -0.026 0"/>
+		<geometry>
+			<mesh filename = 
+			"package://sb2_urdf/models/collision_wheel_8.dae" />
+		</geometry>
+	</collision>
+	<inertial>
+		<origin rpy="0 0 0" xyz="-0.00  -0.02 0.00"/>
+		<mass value="07.77"/>
+		<inertia 
+		ixx = "0.05" ixy = "-0.0" ixz = "0.00" 
+		iyy = "0.09" iyz = "0.00" 
+		izz = "0.05"/>
+	</inertial>
+</link>
+
+<link name="wheel_8_R">
+	<visual>
+		<origin rpy="0 0 0" xyz="0 -0.026 0"/>
+		<geometry>
+			<mesh filename = 
+			"package://sb2_urdf/models/wheel_8.dae" />
+		</geometry>
+	</visual>
+	<collision>
+		<origin rpy="0 0 0" xyz="0 -0.026 0"/>
+		<geometry>
+			<mesh filename = 
+			"package://sb2_urdf/models/collision_wheel_8.dae" />
+		</geometry>
+	</collision>
+	<inertial>
+		<origin rpy="0 0 0" xyz="-0.00  -0.02 0.00"/>
+		<mass value="07.77"/>
+		<inertia 
+		ixx = "0.05" ixy = "-0.00" ixz = "0.00" 
+		iyy = "0.09" iyz = "0.00" 
+		izz = "0.05"/>
+	</inertial>
+</link>
+<link name="center_camera">
+
+</link>
+
+<link name="left_camera">
+
+</link>
+
+<link name="right_camera">
+
+</link>
+
+<link name="rear_camera">
+	<visual>
+		<origin rpy="0 0 0" xyz="0 0 0"/>
+		<geometry>
+			<box size="0.02 0.05 0.05"/>
+		</geometry>
+		<material name="red">
+			<color rgba="1 0 0 1"/>
+		</material>
+	</visual>
+	<visual>
+		<origin rpy="0 1.5707 0" xyz="0.01 0 0"/>
+		<geometry>
+			<cylinder length="0.01" radius="0.00625"/>
+		</geometry>
+		<material name="red">
+			<color rgba="1 0 0 1"/>
+		</material>
+	</visual>
+	<visual>
+		<origin rpy="0 1.5707 0" xyz="-0.025 0 0"/>
+		<geometry>
+			<cylinder length="0.03" radius="0.01"/>
+		</geometry>
+		<material name="red">
+			<color rgba="1 0 0 1"/>
+		</material>
+	</visual>
+	<collision>
+		<origin rpy="0 0 0" xyz="0 0 0"/>
+		<geometry>
+			<box size="0.02 0.05 0.05"/>
+		</geometry>
+	</collision>
+	<collision>
+		<origin rpy="0 1.5707 0" xyz="0.01 0 0"/>
+		<geometry>
+			<cylinder length="0.01" radius="0.00625"/>
+		</geometry>
+		<material name="red">
+			<color rgba="1 0 0 1"/>
+		</material>
+	</collision>
+	<collision>
+		<origin rpy="0 1.5707 0" xyz="-0.025 0 0"/>
+		<geometry>
+			<cylinder length="0.03" radius="0.01"/>
+		</geometry>
+		<material name="red">
+			<color rgba="1 0 0 1"/>
+		</material>
+	</collision>
+</link>
+
+
+<link name="landing_area">
+	<visual>
+		<origin rpy="-1.5707 0 0" xyz="0 0 0"/>
+		<geometry>
+			<mesh filename =
+			"package://sb2_urdf/models/landing_area.dae" />
+		</geometry>
+	</visual>
+	
+	<collision>
+		<origin rpy="-1.5707 0 0" xyz="0 0 0"/>
+		<geometry>
+			<mesh filename =
+			"package://sb2_urdf/models/landing_area.dae" />
+		</geometry>
+	</collision>
+</link> 
+
+<link name="pad">
+	<visual>
+		<origin rpy="0 0 0" xyz="0 0 0"/>
+		<geometry>
+			<box size="0.67 0.67 1e-5"/>
+		</geometry>
+	</visual>
+</link>
+
+
+<gazebo reference="pad">
+	<visual name='visual'>
+		<geometry>
+			<box>
+				<size>0.67 0.67 1e-5</size>
+			</box>
+		</geometry>
+		<material>
+			<script>
+				<uri>model://aruco_visual_marker_7/materials/scripts</uri>
+				<uri>model://aruco_visual_marker_7/materials/textures</uri>
+				<name>ArucoVisualMarker7/Marker</name>
+			</script>
+			<ambient>1 1 1 1</ambient>
+			<diffuse>1 1 1 1</diffuse>
+			<specular>0 0 0 1</specular>
+			<emissive>1 1 1 0</emissive>
+				<shader type='vertex'>
+				<normal_map>__default__</normal_map>
+			</shader>
+		</material>
+		<pose frame=''>0 0 0 0 0 0</pose>
+		<cast_shadows>0</cast_shadows>
+		<transparency>0</transparency>
+	</visual>
+</gazebo>
+
+#### JOINTS ####################################################
+
+<!-- Base Link -->
+<joint name="drivetrain_L_joint" type="fixed">
+	<parent link="base_link"/>
+	<child link="drivetrain_L"/>
+	<origin rpy="0  0  0 " xyz="0 0.45 0"/>
+</joint>
+
+<joint name="drivetrain_R_joint" type="fixed">
+	<parent link="base_link"/>
+	<child link="drivetrain_R"/>
+	<origin rpy="0  0  0 " xyz="0 -0.45 0"/>
+</joint>
+
+<joint name="landing_area_joint" type="fixed">
+	<parent link="base_link"/>
+	<child link="landing_area"/>
+	<origin rpy="0  0  0 " xyz="-0.3 0 0.75"/>
+</joint>
+
+<joint name="base_joint" type="fixed">
+	<parent link="landing_area"/>
+	<child link="pad"/>
+	<origin rpy="0  0  0 " xyz="0.025 0.025 0.421"/>
+</joint>
+
+
+<!-- Front Wheels -->
+<joint name="L_wheel" type="continuous">
+	<parent link="drivetrain_L"/>
+	<child link="wheel_12_L"/>
+	<axis xyz="0 -1 0"/>
+	<origin rpy="3.1459 0 0 " xyz="0 0.026 0.2928"/>
+	<dynamics damping="0.13" friction="0.00006"/>
+</joint>
+
+<joint name="R_wheel" type="continuous">
+	<parent link="drivetrain_R"/>
+	<child link="wheel_12_R"/>
+	<axis xyz="0 1 0"/>
+	<origin rpy="0 0 0 " xyz="0 -0.026 0.2928"/>
+	<dynamics damping="0.13" friction="0.00006"/>
+</joint>
+
+<!-- Castor Arm -->
+<joint name="L_castor" type="continuous">
+	<parent link="drivetrain_L"/>
+	<child link="castor_L"/>
+	<axis xyz="0 0 1"/>
+	<origin rpy="0 0 0 " xyz="-0.84 0 0"/>
+	<dynamics damping="0.13" friction="0.00006"/>
+</joint>
+
+<joint name="R_castor" type="continuous">
+	<parent link="drivetrain_R"/>
+	<child link="castor_R"/>
+	<axis xyz="0 0 1"/>
+	<origin rpy="0 0 0 " xyz="-0.84 0 0"/>
+	<dynamics damping="0.13" friction="0.00006"/>
+</joint>
+
+<!-- Castor Wheels -->
+<joint name="L_castor_wheel" type="continuous">
+	<parent link="castor_L"/>
+	<child link="wheel_8_L"/>
+	<axis xyz="0 -1 0"/>
+	<origin rpy="3.1459 0 0 " xyz="-0.136 0 0.2115"/>
+	<dynamics damping="0.13" friction="0.00006"/>
+</joint>
+
+<joint name="R_castor_wheel" type="continuous">
+	<parent link="castor_R"/>
+	<child link="wheel_8_R"/>
+	<axis xyz="0 1 0"/>
+	<origin rpy="0 0 0 " xyz="-0.136 0 0.2115"/>
+	<dynamics damping="0.13" friction="0.00006"/>
+</joint>	
+
+<!-- Cameras -->
+<joint name="center_camera" type="fixed">
+	<parent link="base_link"/>
+	<child link="center_camera"/>
+	<axis xyz="0 1 0"/>
+	<origin rpy="0 0.52 0" xyz="0.16 0 0.865"/>
+	<!--origin rpy="0 1.5707 0" xyz="0.16 0 0.865"/-->
+</joint>
+
+<joint name="rear_camera" type="fixed">
+	<parent link="base_link"/>
+	<child link="rear_camera"/>
+	<axis xyz="0 1 0"/>
+	<origin rpy="0 0.707 3.1415" xyz="-0.7 0 0.865"/>
+</joint>
+
+<joint name="left_camera" type="fixed">
+	<parent link="base_link"/>
+	<child link="left_camera"/>
+	<axis xyz="0 1 0"/>
+	<origin rpy="0 0.2618 0" xyz="0.5 0.485 0.22"/>
+</joint>g
+
+<joint name="right_camera" type="fixed">
+	<parent link="base_link"/>
+	<child link="right_camera"/>
+	<axis xyz="0 1 0"/>
+	<origin rpy="0 0.2618 0" xyz="0.5 -0.475 0.22"/>
+</joint>
+
+
+<!-- Differential Driver Plugin -->
+<gazebo>	
+  <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+    <alwaysOn>true</alwaysOn>
+    <legacyMode>false</legacyMode>
+    <updateRate>50</updateRate>
+    <leftJoint>L_wheel</leftJoint>
+    <rightJoint>R_wheel</rightJoint>
+    <wheelSeparation>0.952</wheelSeparation>
+    <!--wheelDiameter>0.2928</wheelDiameter-->
+    <wheelDiameter>0.5856</wheelDiameter>
+    <torque>50</torque>
+    <commandTopic>/soybot/cmd_vel</commandTopic>
+    <odometryTopic>/odom</odometryTopic>
+    <odometryFrame>/odom</odometryFrame>
+    <robotBaseFrame>base_link</robotBaseFrame>
+    <wheelTorque>90</wheelTorque>
+  </plugin>  
+</gazebo>
+
+<!-- Cetral Camera Plugin -->
+<gazebo reference="center_camera">
+<sensor name="center_camera" type="camera">
+  <update_rate>30.0</update_rate>
+  <camera name="center_camera">
+    <!--pose>0.0 0.21 0.0 0.0 -0.8 -1.570796327 </pose-->
+    <pose>0 0 0 0 0 0</pose>
+    <horizontal_fov>1.0471</horizontal_fov>
+    <image>
+      <width>640</width>
+      <height>480</height>
+      <format>R8G8B8</format>
+    </image>
+    <clip>
+      <near>0.02</near>
+      <far>300</far>
+    </clip>
+    <noise>
+      <type>gaussian</type>
+      <mean>0.0</mean>
+      <stddev>0.007</stddev>
+    </noise>
+  </camera>
+  <plugin filename="libgazebo_ros_camera.so" name="camera_controller">
+    <alwaysOn>true</alwaysOn>
+    <updateRate>0.0</updateRate>
+    <cameraName>center_camera</cameraName>
+    <imageTopicName>image_raw</imageTopicName>
+    <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+    <frameName>center_camera</frameName>
+    <hackBaseline>0.07</hackBaseline>
+    <distortionK1>0.0</distortionK1>
+    <distortionK2>0.0</distortionK2>
+    <distortionK3>0.0</distortionK3>
+    <distortionT1>0.0</distortionT1>
+    <distortionT2>0.0</distortionT2>
+    <robotNamespace>/soybot/cameras</robotNamespace>
+  </plugin>
+</sensor>
+</gazebo>
+
+<!-- Rear Camera Plugin -->
+<gazebo reference="rear_camera">
+<sensor name="rear_camera" type="camera">
+  <update_rate>30.0</update_rate>
+  <camera name="rear_camera">
+    <!--pose>0.0 0.21 0.0 0.0 -0.8 -1.570796327 </pose-->
+    <pose>0 0 0 0 0 0</pose>
+    <horizontal_fov>1.0471</horizontal_fov>
+    <image>
+      <width>640</width>
+      <height>480</height>
+      <format>R8G8B8</format>
+    </image>
+    <clip>
+      <near>0.02</near>
+      <far>300</far>
+    </clip>
+    <noise>
+      <type>gaussian</type>
+      <mean>0.0</mean>
+      <stddev>0.007</stddev>
+    </noise>
+  </camera>
+  <plugin filename="libgazebo_ros_camera.so" name="camera_controller">
+    <alwaysOn>true</alwaysOn>
+    <updateRate>0.0</updateRate>
+    <cameraName>rear_camera</cameraName>
+    <imageTopicName>image_raw</imageTopicName>
+    <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+    <frameName>rear_camera</frameName>
+    <hackBaseline>0.07</hackBaseline>
+    <distortionK1>0.0</distortionK1>
+    <distortionK2>0.0</distortionK2>
+    <distortionK3>0.0</distortionK3>
+    <distortionT1>0.0</distortionT1>
+    <distortionT2>0.0</distortionT2>
+    <robotNamespace>/soybot/cameras</robotNamespace>
+  </plugin>
+</sensor>
+</gazebo>
+
+<!-- Left Camera Plugin -->
+<gazebo reference="left_camera">
+<sensor name="left_camera" type="camera">
+  <update_rate>30.0</update_rate>
+  <camera name="left_camera">
+    <pose>0 0 0 0 0 0</pose>
+    <horizontal_fov>1.0471</horizontal_fov>
+    <image>
+      <width>640</width>
+      <height>480</height>
+      <format>R8G8B8</format>
+    </image>
+    <clip>
+      <near>0.02</near>
+      <far>300</far>
+    </clip>
+    <noise>
+      <type>gaussian</type>
+      <mean>0.0</mean>
+      <stddev>0.007</stddev>
+    </noise>
+  </camera>
+  <plugin filename="libgazebo_ros_camera.so" name="camera_controller">
+    <alwaysOn>true</alwaysOn>
+    <updateRate>0.0</updateRate>
+    <cameraName>left_camera</cameraName>
+    <imageTopicName>image_raw</imageTopicName>
+    <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+    <frameName>left_camera</frameName>
+    <hackBaseline>0.07</hackBaseline>
+    <distortionK1>0.0</distortionK1>
+    <distortionK2>0.0</distortionK2>
+    <distortionK3>0.0</distortionK3>
+    <distortionT1>0.0</distortionT1>
+    <distortionT2>0.0</distortionT2>
+    <robotNamespace>/soybot/cameras</robotNamespace>
+  </plugin>
+</sensor>
+</gazebo>
+
+<!-- Right Camera Plugin -->
+<gazebo reference="right_camera">
+<sensor name="right_camera" type="camera">
+  <update_rate>30.0</update_rate>
+  <camera name="right_camera">
+    <pose>0 0 0 0 0 0</pose>
+    <horizontal_fov>1.0471</horizontal_fov>
+    <image>
+      <width>640</width>
+      <height>480</height>
+      <format>R8G8B8</format>
+    </image>
+    <clip>
+      <near>0.02</near>
+      <far>300</far>
+    </clip>
+    <noise>
+      <type>gaussian</type>
+      <mean>0.0</mean>
+      <stddev>0.007</stddev>
+    </noise>
+  </camera>
+  <plugin filename="libgazebo_ros_camera.so" name="camera_controller">
+    <alwaysOn>true</alwaysOn>
+    <updateRate>0.0</updateRate>
+    <cameraName>right_camera</cameraName>
+    <imageTopicName>image_raw</imageTopicName>
+    <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+    <frameName>right_camera</frameName>
+    <hackBaseline>0.07</hackBaseline>
+    <distortionK1>0.0</distortionK1>
+    <distortionK2>0.0</distortionK2>
+    <distortionK3>0.0</distortionK3>
+    <distortionT1>0.0</distortionT1>
+    <distortionT2>0.0</distortionT2>
+    <robotNamespace>/soybot/cameras</robotNamespace>
+  </plugin>
+</sensor>
+</gazebo>
+
+
+</robot>
