@@ -1,11 +1,14 @@
 # soybot_model
 Model of Soybot robot.
+This package contaisn the urdf model of the soybot agricultural robot.
 
 ## Intalling the model
-Previouly, download the gazebo models from <https://github.com/bettoigor/gazebo_models.git>.
-Clone this repo to the ros catkin workspace and run ```catkin_make``` commando  to compile the package.
+Previouly, download the gazebo models from <https://github.com/bettoigor/gazebo_models.git>, following the instruction in the README file.
 
-## Running the model
+Before this, clone this repository to your ros workspace and run ```catkin_make``` commando  to compile the package.
+
+
+## Testing the model
 The model can be launched from the launch file ```soybot_model.launch```, using the following command:
 ```
 roslaunch soybot_model soybot_model.launch
