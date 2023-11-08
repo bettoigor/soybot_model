@@ -1,40 +1,25 @@
-<!--
-Create and run a launch file that 
-
-puts the contents of your URDF
-file on the parameter server under /robot_description and 
-
-starts
-the robot_state_publisher node in the /sb2 namespace
--->
-
-
 <launch>
 
+   
     <include 
     	file="$(find gazebo_ros)/launch/empty_world.launch">
+	
+
+    
     </include>
+
     
     <arg 
-        name="model"
-        default="$(find soybot_model)/urdf/soybot.urdf"/>
-    
-    <arg 
-    	name="gui" 
-    	default="true" />
-
-    <group 
-    	ns="/soybot">
-
-	    <param 
-	    	name="robot_description" 
-	    	command="$(find xacro)/xacro $(arg model)" />
-    	
-    	<param 
-    		name="use_gui" 
-    		value="$(arg gui)"/>
-
-
-    </group>
-
+    	name="model" 
+    	default="$(find soybot_model)/urdf/soybot.urdf"/>
+	<param 
+		name="robot_description" 
+		command="$(find xacro)/xacro $(arg model)" />
+	<node 
+		name="spawn_model" 
+		pkg="gazebo_ros" 
+		type="spawn_model" 
+		args="-param robot_description -urdf -x 0 -y 0 -z 1 -model soybot" />
+		
 </launch>
+

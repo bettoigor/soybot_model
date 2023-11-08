@@ -18,6 +18,7 @@ Before this, Gazebo will be launched and the simulation environment will appear.
 ## Checking the Environment
 ### Checking the published topics
 To check all the topics type:
+
 ```
 rostopic list
 ```
